@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Notes</title>
+    <style>
+    /* Importing Google Font - Poppins using @import tag.*/
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body{
+      background: #383a3f;
+    }
+    ::selection{
+      color: #fff;
+      background: #618cf8;
+    }
+    .wrapper{
+      margin: 50px;
+      display: block;
+      width: 17%;
+      gap: 25px;
+      grid-template-columns: repeat(auto-fill, 265px);
+      transition: transform .2s;
+    }
+    .wrapper:hover{
+      transform: scale(1.05);
+    }
+    .wrapper li{
+      height: 250px;
+      list-style: none;
+      border-radius: 5px;
+      padding: 15px 20px 20px;
+      background: #f6b352;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .add-box, .icon, li{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .add-box{
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .add-box .icon{
+      height: 78px;
+      width: 78px;
+      color: #fff;
+      font-size: 40px;
+      border-radius: 50%;
+      justify-content: center;
+      border: 2px dashed #88ABFF;
+    }
+    .add-box p{
+      color: #fff;
+      font-weight: 500;
+      margin-top: 20px;
+      color: black;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* Design of the card which holds the Title and Description of the each note. */
+    @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    .card {
+      background: #1f2124;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      margin: 50px 20px 20px 20px;
+      width: calc(33.3333% - 40px);
+      /* 1/3 minus the margins (20+20) as width will calculated for the responsivness part. */
+      padding: 20px;
+      text-align: center;
+      color: white;
+      display: grid;
+      transition: transform .2s;
+      float: left;
+    }
+    @media (max-width: 768px) {
+      .card {
+        margin: 10px 20px;
+        width: calc(100% - 40px);
+      }
+      .card:first-child {
+        margin-top: 20px;
+      }
+    }
+    .card:nth-child(2) {
+      margin: 20px 0px;
+      width: 33.3333%;
+      padding: 50px 20px;
+    }
+    @media (max-width: 768px) {
+      .card:nth-child(2) {
+        margin: 10px 20px;
+        width: calc(100% - 40px);
+      }
+    }
+    .card:hover{
+      transform: scale(1.05);
+    }
+
+    .card .title {
+      font-size: 25px;
+    }
+
+    .card .btn {
+      display: block;
+      background: #f6b352;
+      color: white;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.9);
+      text-decoration: none;
+    }
+    .card .btn:hover {
+      background: #f68657;
+    }
+    /* For the responsivness for the Add new note button through out different devices. */
+    @media (max-width: 660px){
+      .wrapper{
+        margin: 15px;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fill, 100%);
+      }
+    }
+    hr{
+      padding-top: 0px;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .typewriter{
+      background: #1f2124;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      margin: 50px 20px 20px 20px;
+      width: calc(70.3333% - 40px);
+      /* 1/3 minus the margins (20+20) as width will calculated for the responsivness part. */
+      height: 25%;
+      padding: 70px;
+      text-align: center;
+      color: white;
+      float: right;
+      position: absolute;
+      top: 20px;
+      right: 60px;
+      transition: transform .2s;
+    }
+    .typewriter h1 {
+      padding-bottom: 30px;
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: .15em solid orange; /* The typwriter cursor */
+      white-space: nowrap; /* Keeps the content on a single line */
+      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+      letter-spacing: .15em; /* Adjust as needed */
+      animation:  typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+    .typewriter:hover{
+      transform: scale(1.05);
+    }
+
+    /* The typing effect */
+     @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+
+    a{
+      color: inherit;
+      text-decoration: inherit;
+    }
+    a:hover{
+      color: orange;
+    }
+    h2{
+      color: yellow;
+    }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Iconscout Link For Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <!-- Part for the Add new note -->
+    <span class="wrapper">
+      <li class="add-box">
+        <span class="icon"><a href="add/"><i class="uil uil-plus"></i></a></span>
+        <p>Add new note</p>
+      </li>
+    </span>
+    <div class="typewriter">
+      <h1>Welcome to Taking Notes using Web!</h1>
+    </div>
+      <!-- Part for the notes display -->
+      {% for x in mynotes %}
+      <div class="card">
+
+          <div class="title">
+          {{x.title}}
+          </div>
+
+          <hr>
+
+          <div class="description">
+            {{x.description}}
+          </div>
+
+<!-- This right here I've inserted button for Editing and deleting my notes. -->
+          <a href="update/{{x.id}}" class="btn">Edit</a>
+          <a href="delete/{{x.id}}" class="btn">Delete</a>
+
+      </div>
+      {% endfor %}
+  <footer>
+    <div class="card">
+      <p><h2>Developed by:</h2></p>
+      <p><h3><a href="https://www.linkedin.com/in/ishan-ray-93595a248/">Ishan Ray</h3></a></p>
+      <p><h3><a href="https://www.linkedin.com/in/aditya-gupta-b88b70226/">Aditya Gupta</h3></a></p>
+    </div>
+
+  </footer>
+  </body>
+</html>
